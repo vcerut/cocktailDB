@@ -7,8 +7,10 @@
   border-radius: 10px;
   padding: 30px 10px;
   margin-bottom:1em;
+  transition: 0.3s;
   &:hover {
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.39);
+    scale: (1.02);
   }
     p {
       color: #262626;
