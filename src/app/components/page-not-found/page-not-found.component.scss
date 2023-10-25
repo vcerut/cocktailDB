@@ -1,0 +1,21 @@
+.container {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-top: 10vh;
+  .row {
+    padding: 5vh;
+  }
+}
+a {
+  text-decoration: none;
+  .btn {
+      font-weight: bold;
+    background-color: #fb8b24;
+    &:hover {
+      background-color: #E36414;
+    }
+  }
+  &:hover {
+    color: white;
+  }
+}

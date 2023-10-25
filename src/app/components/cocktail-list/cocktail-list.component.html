@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mb-4">
+      <h1>Cocktails</h1>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
+    <div class="col" *ngFor="let cocktail of cocktails">
+      <a [routerLink]="['/drink', cocktail.id + '-' + cocktail.slug]" class="text-decoration-none">
+      <div class="card">
+          <div class="img">
+            <img [src]="cocktail.thumbnail"
+            alt="{{ cocktail.name }}">
+          </div>
+          <h2>
+            {{cocktail.name}}
+            <span [ngClass]="{na: cocktail.alcoholic==='Non alcoholic'}">
+              {{cocktail.alcoholic}}
+            </span>
+          </h2>
+          <p>
+            {{cocktail.category}}
+          </p>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+/* Importing Bootstrap SCSS file. */
+
+nav {
+  h2 {
+    font-variant: small-caps;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    color: #262626;
+  }
+}
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #5F0F40;
+  font-style: italic;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+
+h3 {
+  color: #9A031E;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+}
