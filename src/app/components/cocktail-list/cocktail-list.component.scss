@@ -45,3 +45,13 @@
       }
     }
 }
+
+.button-list {
+  display: flex;
+  justify-content: center;
+  margin-left: 0px;
+  .alphabet-button {
+    margin: 5px;
+    background-color:#dfdfdf;
+  }
+}
