@@ -5,7 +5,7 @@ export interface Cocktail {
   tag: string;
   alcoholic: string;
   category: string;
-  ingredients: any[]|undefined;
+  ingredients: any[] | undefined;
   glass: string;
   instructions: string;
   slug: string;

@@ -1,51 +1,43 @@
-
-<div *ngIf="cocktail; then thenBlock else NotFoundBlock"></div>
+<div *ngIf="cocktail; then thenBlock; else NotFoundBlock"></div>
 <ng-template #thenBlock>
-    <div class="container">
-      <div class="row align-items-center flex-column flex-md-row">
-        
-        <div class="col-6">
-          <img [src]="cocktail?.thumbnail" alt="">
+  <div class="container">
+    <div class="row align-items-center flex-column flex-md-row">
+      <div class="col-6">
+        <img [src]="cocktail?.thumbnail" alt="" />
+      </div>
+      <div class="col-6">
+        <h1>
+          {{ cocktail?.name }}
+        </h1>
+        <div class="col-12 d-flex flex-row bubble-tags">
+          <span [ngClass]="{ na: cocktail?.alcoholic === 'Non alcoholic' }">
+            {{ cocktail?.alcoholic }}
+          </span>
+          <span class="generic-category">
+            {{ cocktail?.category }}
+          </span>
         </div>
-        <div class="col-6">
-          <h1>
-            {{cocktail?.name}}
-          </h1>
-          <div class="col-12 d-flex flex-row bubble-tags">
-            <span [ngClass]="{na: cocktail?.alcoholic==='Non alcoholic'}">
-              {{cocktail?.alcoholic}}
-            </span>
-            <span class="generic-category">
-              {{cocktail?.category}}
-            </span>
-          </div>
-          <h3>
-            Ingredients:
-          </h3>
-          <ul>
-            <li *ngFor="let ingredient of cocktail?.ingredients">{{ingredient.name}}: {{ingredient.measure}}</li>
-          </ul>
-          <h3>
-            What you'll need
-          </h3>
-          <p>{{cocktail?.glass}}</p>
-          <h3>
-            Instructions
-          </h3>
-          <p>{{cocktail?.instructions}}</p>
-        </div>
+        <h3>Ingredients:</h3>
+        <ul>
+          <li *ngFor="let ingredient of cocktail?.ingredients">
+            {{ ingredient.name }}: {{ ingredient.measure }}
+          </li>
+        </ul>
+        <h3>What you'll need</h3>
+        <p>{{ cocktail?.glass }}</p>
+        <h3>Instructions</h3>
+        <p>{{ cocktail?.instructions }}</p>
       </div>
     </div>
-      </ng-template>
-      <ng-template #NotFoundBlock>
-        <div class="container">
-          <div class="row">
-            <div class="col-12 notFound">
-              <h1>COCKTAIL NON TROVATO</h1>
-              <a href=""><button class="btn">
-                GO BACK
-            </button></a>
-            </div>
-          </div>
-        </div>
-      </ng-template>
+  </div>
+</ng-template>
+<ng-template #NotFoundBlock>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 notFound">
+        <h1>COCKTAIL NON TROVATO</h1>
+        <a href=""><button class="btn">GO BACK</button></a>
+      </div>
+    </div>
+  </div>
+</ng-template>

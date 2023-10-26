@@ -10,8 +10,8 @@ import { CocktailServiceService } from 'src/app/services/cocktail-service.servic
   styleUrls: ['./cocktail-details.component.scss'],
 })
 export class CocktailDetailsComponent implements OnInit {
-  headers: any
-  cocktail: Cocktail|undefined;
+  headers: any;
+  cocktail: Cocktail | undefined;
 
   drinkId: number = -1;
   paramsSub: any;
@@ -21,17 +21,22 @@ export class CocktailDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private getCocktailDetailsService: CocktailServiceService
-  ) {  }
+  ) {}
 
   ngOnInit(): void {
     this.paramsSub = this.route.params.subscribe((params) => {
       const [id, ...slug] = params['id'].split('-');
       this.drinkId = +id;
-      this.httpSub = this.getCocktailDetailsService.getCocktailDetails(this.drinkId).subscribe(
-        (data: any) => this.cocktail=data.drinks?this.getCocktailDetailsService.transformDrink(data.drinks[0]):undefined);
+      this.httpSub = this.getCocktailDetailsService
+        .getCocktailDetails(this.drinkId)
+        .subscribe(
+          (data: any) =>
+            (this.cocktail = data.drinks
+              ? this.getCocktailDetailsService.transformDrink(data.drinks[0])
+              : undefined)
+        );
       return this.drinkId;
     });
-
   }
 
   ngOnDestroy() {

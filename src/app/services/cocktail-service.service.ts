@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import slugify from '@sindresorhus/slugify';
 // import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CocktailServiceService {
   private drinkId: number = 0;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getCocktailsStartingWithA() {
-    return this.http.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a');
+  getCocktailsStartingWithLetter(letter: string) {
+    return this.http.get(
+      `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${letter}`
+    );
   }
 
   getCocktailDetails(drinkId: number) {
@@ -20,7 +22,6 @@ export class CocktailServiceService {
 
     return this.http.get(apiUrl);
   }
-
 
   transformDrink(drink: any) {
     return {
@@ -32,13 +33,13 @@ export class CocktailServiceService {
       category: drink.strCategory,
       glass: drink.strGlass,
       instructions: drink.strInstructions,
-      slug:  slugify(drink.strDrink),
-      ingredients:  Array.from({length: 15}, (_, i) => i + 1)
-          .map((i) => ({
-            'name': drink[`strIngredient${i}`],
-            'measure': drink[`strMeasure${i}`]
-          })) 
-          .filter((i) => i.name!==null),
-    }
+      slug: slugify(drink.strDrink),
+      ingredients: Array.from({ length: 15 }, (_, i) => i + 1)
+        .map((i) => ({
+          name: drink[`strIngredient${i}`],
+          measure: drink[`strMeasure${i}`],
+        }))
+        .filter((i) => i.name !== null),
+    };
   }
 }
