@@ -26,7 +26,19 @@
         <h3>What you'll need</h3>
         <p>{{ cocktail?.glass }}</p>
         <h3>Instructions</h3>
-        <p>{{ cocktail?.instructions }}</p>
+        <div class="button-container">
+          <button class="btn" (click)="setCurrentLanguage('en')">EN</button>
+          <button class="btn" (click)="setCurrentLanguage('de')">DE</button>
+          <button class="btn" (click)="setCurrentLanguage('it')">IT</button>
+          <button class="btn" (click)="setCurrentLanguage('es')">ES</button>
+        </div>
+        <span></span>
+        <div [ngSwitch]="currentLanguage">
+          <p *ngSwitchCase="'en'">{{ cocktail?.instructions }}</p>
+          <p *ngSwitchCase="'de'">{{ cocktail?.instructionsDE }}</p>
+          <p *ngSwitchCase="'it'">{{ cocktail?.instructionsIT }}</p>
+          <p *ngSwitchCase="'es'">{{ cocktail?.instructionsES }}</p>
+        </div>
       </div>
     </div>
   </div>

@@ -17,6 +17,11 @@ export class CocktailDetailsComponent implements OnInit {
   paramsSub: any;
   httpSub: any;
   activatedRoute: any;
+  currentLanguage: any;
+
+  setCurrentLanguage(language: any) {
+    this.currentLanguage = language;
+  }
 
   constructor(
     private route: ActivatedRoute,

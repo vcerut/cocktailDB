@@ -8,5 +8,8 @@ export interface Cocktail {
   ingredients: any[] | undefined;
   glass: string;
   instructions: string;
+  instructionsES: string;
+  instructionsIT: string;
+  instructionsDE: string;
   slug: string;
 }
