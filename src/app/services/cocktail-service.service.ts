@@ -33,6 +33,9 @@ export class CocktailServiceService {
       category: drink.strCategory,
       glass: drink.strGlass,
       instructions: drink.strInstructions,
+      instructionsES: drink.strInstructionsES,
+      instructionsDE: drink.strInstructionsDE,
+      instructionsIT: drink.strInstructionsIT,
       slug: slugify(drink.strDrink),
       ingredients: Array.from({ length: 15 }, (_, i) => i + 1)
         .map((i) => ({

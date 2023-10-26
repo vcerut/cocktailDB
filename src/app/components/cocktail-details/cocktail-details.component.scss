@@ -22,23 +22,34 @@ li {
   }
   .row {
     padding: 5vh;
+    .col-6 {
+      .button-container {
+        .btn {
+          color: white;
+          font-weight: 500;
+          margin: 1vh;
+        }
+      }
+    }
     .notFound {
       text-align: center;
       a {
         text-decoration: none;
-        .btn {
-          margin-top: 3vh;
-          font-weight: bold;
-          background-color: #fb8b24;
-          &:hover {
-            background-color: #e36414;
-          }
-        }
+
         &:hover {
           color: white;
         }
       }
     }
+  }
+}
+
+.btn {
+  margin-top: 3vh;
+  font-weight: bold;
+  background-color: #fb8b24;
+  &:hover {
+    background-color: #e36414;
   }
 }
 
