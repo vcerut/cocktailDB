@@ -92,14 +92,15 @@
             Z
           </button>
         </div>
+
+        <div class="col-12 filter-by-alcoholic">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="showAlcoholicOnly" (change)="onAlcoholicCheckboxChange()" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">Hide non-alcoholic drinks</label>
+          </div>
+        </div>
       </div>
       
-<div class="col-12 filter-by-alcoholic">
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" [(ngModel)]="showAlcoholicOnly" (change)="onAlcoholicCheckboxChange()" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">Show only alcoholic drinks</label>
-  </div>
-</div>
 
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
