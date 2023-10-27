@@ -8,58 +8,124 @@
     <div class="col-12 d-flex justify-content-center mb-4">
       <h1>Cocktails</h1>
     </div>
-    <div class="col-12">
-      <h3>Filter by letter:</h3>
-    </div>
-    <div class="col alphabet-buttons button-list d-flex flex-wrap">
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('A')">A</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('B')">B</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('C')">C</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('D')">D</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('E')">E</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('F')">F</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('G')">G</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('H')">H</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('I')">I</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('J')">J</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('K')">K</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('L')">L</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('M')">M</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('N')">N</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('O')">O</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('P')">P</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('Q')">Q</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('R')">R</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('S')">S</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('T')">T</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('U')">U</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('V')">V</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('W')">W</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('X')">X</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('Y')">Y</button>
-      <button class="btn pb-2 alphabet-button" (click)="onLetterClick('Z')">Z</button>
-    </div>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
-      <div class="col" *ngFor="let cocktail of cocktails">
-        <a
-          [routerLink]="['/drink', cocktail.id + '-' + cocktail.slug]"
-          class="text-decoration-none"
-        >
-          <div class="card">
-            <div class="img">
-              <img [src]="cocktail.thumbnail" alt="{{ cocktail.name }}" />
+    <div class="filters">
+      <div class="col-12 filter-by-letter">
+        <h3>Filter by letter:</h3>
+
+        <div class="generic-buttons button-list d-flex flex-wrap">
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('A')">
+            A
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('B')">
+            B
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('C')">
+            C
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('D')">
+            D
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('E')">
+            E
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('F')">
+            F
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('G')">
+            G
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('H')">
+            H
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('I')">
+            I
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('J')">
+            J
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('K')">
+            K
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('L')">
+            L
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('M')">
+            M
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('N')">
+            N
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('O')">
+            O
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('P')">
+            P
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('Q')">
+            Q
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('R')">
+            R
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('S')">
+            S
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('T')">
+            T
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('U')">
+            U
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('V')">
+            V
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('W')">
+            W
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('X')">
+            X
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('Y')">
+            Y
+          </button>
+          <button class="btn pb-2 generic-button" (click)="onLetterClick('Z')">
+            Z
+          </button>
+        </div>
+      </div>
+      
+<div class="col-12 filter-by-alcoholic">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" [(ngModel)]="showAlcoholicOnly" (change)="onAlcoholicCheckboxChange()" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">Show only alcoholic drinks</label>
+  </div>
+</div>
+
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5">
+        <div class="col" *ngFor="let cocktail of filteredCocktails">
+          <a
+            [routerLink]="['/drink', cocktail.id + '-' + cocktail.slug]"
+            class="text-decoration-none"
+          >
+            <div class="card">
+              <div class="img">
+                <img [src]="cocktail.thumbnail" alt="{{ cocktail.name }}" />
+              </div>
+              <h2>
+                {{ cocktail.name }}
+                <span
+                  [ngClass]="{ na: cocktail.alcoholic === 'Non alcoholic' }"
+                >
+                  {{ cocktail.alcoholic }}
+                </span>
+              </h2>
+              <p>
+                {{ cocktail.category }}
+              </p>
             </div>
-            <h2>
-              {{ cocktail.name }}
-              <span [ngClass]="{ na: cocktail.alcoholic === 'Non alcoholic' }">
-                {{ cocktail.alcoholic }}
-              </span>
-            </h2>
-            <p>
-              {{ cocktail.category }}
-            </p>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -45,13 +45,17 @@
       }
     }
 }
-
-.button-list {
-  display: flex;
-  justify-content: center;
-  margin-left: 0px;
-  .alphabet-button {
-    margin: 5px;
-    background-color:#dfdfdf;
+.filters {
+h3 {
+  text-align: center;
+}
+  .button-list, .alcoholic-buttons {
+    display: flex;
+    justify-content: center;
+    margin-left: 0px;
+    .generic-button {
+      margin: 5px;
+      background-color:#dfdfdf;
+    }
   }
 }
