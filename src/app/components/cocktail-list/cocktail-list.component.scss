@@ -67,3 +67,13 @@ h3 {
   }
 }
 }
+
+.title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:#E36414;
+  }
+}
