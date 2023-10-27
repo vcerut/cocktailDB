@@ -18,9 +18,17 @@ export class CocktailDetailsComponent implements OnInit {
   httpSub: any;
   activatedRoute: any;
   currentLanguage: any;
+  tags: string[] = [];
 
   setCurrentLanguage(language: any) {
     this.currentLanguage = language;
+  }
+
+  splitTags(cocktail: Cocktail | undefined): string[] {
+    if (cocktail && cocktail.tag && typeof cocktail.tag === 'string') {
+      return cocktail.tag.split(',').map((tag) => tag.trim());
+    }
+    return [];
   }
 
   constructor(
@@ -35,10 +43,12 @@ export class CocktailDetailsComponent implements OnInit {
       this.httpSub = this.getCocktailDetailsService
         .getCocktailDetails(this.drinkId)
         .subscribe(
-          (data: any) =>
-            (this.cocktail = data.drinks
+          (data: any) => {
+            this.cocktail = data.drinks
               ? this.getCocktailDetailsService.transformDrink(data.drinks[0])
-              : undefined)
+              : undefined;
+            this.tags = this.splitTags(this.cocktail);
+          }
         );
       return this.drinkId;
     });

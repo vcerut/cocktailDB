@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CocktailDetailsComponent } from '../components/cocktail-details/cocktail-details.component';
 import slugify from '@sindresorhus/slugify';
 // import { ActivatedRoute } from '@angular/router';
 

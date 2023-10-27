@@ -23,6 +23,25 @@ li {
   .row {
     padding: 5vh;
     .col-6 {
+      .col-12{
+        display: flex;
+        flex-direction: row;
+        padding: 0px;
+        margin:0px;
+        .tagNames {
+          background: #c35257;
+          color: #fff;
+          display: block;
+          padding: 4px 10px;
+          margin: 5px;
+          border-radius: 15px;
+          width: fit-content;
+          transition: all 0.3s ease-out;
+          &:hover {
+            scale: (1.1);
+          }
+        }
+      }
       .button-container {
         .btn {
           color: white;
