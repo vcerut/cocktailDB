@@ -27,10 +27,10 @@
         <p>{{ cocktail?.glass }}</p>
         <h3>Instructions</h3>
         <div class="button-container">
-          <button class="btn" (click)="setCurrentLanguage('en')">EN</button>
-          <button class="btn" (click)="setCurrentLanguage('de')">DE</button>
-          <button class="btn" (click)="setCurrentLanguage('it')">IT</button>
-          <button class="btn" (click)="setCurrentLanguage('es')">ES</button>
+          <button class="btn" (click)="setCurrentLanguage('en')"> <span class="fi fi-gb"></span> </button>
+          <button class="btn" (click)="setCurrentLanguage('de')"> <span class="fi fi-de"></span></button>
+          <button class="btn" (click)="setCurrentLanguage('it')"> <span class="fi fi-it"></span></button>
+          <button class="btn" (click)="setCurrentLanguage('es')"><span class="fi fi-es"></span></button>
         </div>
         <span></span>
         <div [ngSwitch]="currentLanguage">
