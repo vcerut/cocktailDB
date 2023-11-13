@@ -9,6 +9,7 @@ import { CocktailDetailsComponent } from './components/cocktail-details/cocktail
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { FormsModule } from '@angular/forms';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     CocktailListComponent,
     CocktailDetailsComponent,
     PageNotFoundComponent,
+    HomepageComponent,
     
   ],
   imports: [

@@ -1,9 +1,14 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <h2>
-            <a [routerLink]="['']" class="px-2">The Cocktail db</a>
-        </h2>
-    </div>
+  <div class="container-fluid">
+    <h2>
+      <a [routerLink]="['']" class="px-2">The Cocktail db</a>
+    </h2>
+</div>
+
+
+    <a [routerLink]="['list']" class="px-3">Cocktails</a>
+    <a [routerLink]="['add']" class="px-3">Add</a>
+
 </nav>
 
 <router-outlet></router-outlet>
